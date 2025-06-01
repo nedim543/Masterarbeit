@@ -1,0 +1,17 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: Schedule
+metadata:
+  name: pod-failure-centrel-node-b-schedule
+  namespace: central-network
+spec:
+  schedule: "@every 20s" 
+  type: PodChaos
+  podChaos:
+    action: pod-failure
+    mode: one
+    duration: "5s" 
+    selector:
+      namespaces:
+        - central-network
+      labelSelectors:
+        app: worker-node-b

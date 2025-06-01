@@ -1,0 +1,23 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: partition-b-c
+  namespace: edge-network
+spec:
+  action: partition
+  mode: one
+  selector:
+    namespaces:
+      - edge-network
+    labelSelectors:
+      app: flask-node-b
+  direction: to
+  target:
+    mode: one
+    selector:
+      namespaces:
+        - edge-network
+      labelSelectors:
+        app: flask-node-c
+    
+  #duration: '200s'

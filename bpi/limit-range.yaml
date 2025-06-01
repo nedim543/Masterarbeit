@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: mem-limit-range
+spec:
+  limits:
+  - default:
+      memory: 800Mi
+    defaultRequest:
+      memory: 512Mi
+    type: Container
+
+Name:             a-cancelled-77d55f6f7-g9s4p
+Namespace:        bpi
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Fri, 23 May 2025 23:30:41 +0000
+Labels:           app=a-cancelled
+                  pod-template-hash=77d55f6f7
+Annotations:      kubernetes.io/limit-ranger: LimitRanger plugin set: memory request for container a-cancelled; memory limit for container a-cancelled
+Status:           Running
+IP:               10.244.14.142
+IPs:
+  IP:           10.244.14.142
+Controlled By:  ReplicaSet/a-cancelled-77d55f6f7
+Containers:
+  a-cancelled:
+    Container ID:   docker://65a2b96ef0ddfa9fc3b270b4d2287f3721affa9dc932c436cd0f491be4f9cb93
+    Image:          stu240498/flask-node
+    Image ID:       docker-pullable://stu240498/flask-node@sha256:772e48bbc53f274a62b3307a65e70df3266d19471618ec01bfc0e89a774b354e
+    Port:           5000/TCP
+    Host Port:      0/TCP
+    State:          Terminated
+      Reason:       Error
+      Exit Code:    137
+      Started:      Fri, 23 May 2025 23:31:56 +0000
+      Finished:     Fri, 23 May 2025 23:36:56 +0000
+    Ready:          False
+    Restart Count:  0
+    Limits:
+      memory:  800Mi
+    Requests:
+      memory:  512Mi
+    Environment:
+      NAME:  A_CANCELLED
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-t4crn (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-t4crn:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age                  From               Message
+  ----    ------     ----                 ----               -------
+  Normal  Scheduled  7m7s                 default-scheduler  Successfully assigned bpi/a-cancelled-77d55f6f7-g9s4p to minikube
+  Normal  Pulled     5m55s                kubelet            Successfully pulled image "stu240498/flask-node" in 4.696s (57.134s including waiting). Image size: 1054409356 bytes.
+  Normal  Pulling    43s (x2 over 6m53s)  kubelet            Pulling image "stu240498/flask-node"
+  Normal  Pulled     39s                  kubelet            Successfully pulled image "stu240498/flask-node" in 4.769s (4.769s including waiting). Image size: 1054409356 bytes.
+  Normal  Created    33s (x2 over 5m53s)  kubelet            Created container a-cancelled
+  Normal  Started    26s (x2 over 5m48s)  kubelet            Started container a-cancelled

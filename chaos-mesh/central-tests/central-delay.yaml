@@ -1,0 +1,17 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: central-delay-b
+spec:
+  action: delay
+  mode: one
+  selector:
+    namespaces: 
+      - central-network
+    labelSelectors:
+      'app': 'worker-node-b'
+  delay:
+    latency: '1s'
+    correlation: '100'
+    jitter: '0ms'
+

@@ -1,0 +1,15 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: central-packet-loss-b
+spec:
+  action: loss
+  mode: one
+  selector:
+    namespaces:
+      - central-network
+    labelSelectors:
+      'app': 'worker-node-b'
+  loss:
+    loss: "50"     # Prozentualer Paketverlust (z. B. 50%)
+    correlation: "0"  # Kein Zusammenhang zwischen Verlusten

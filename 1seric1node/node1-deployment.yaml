@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-node1
+  labels:
+    app: flask-node
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-node
+      node: node1  # Eindeutiger Name
+  template:
+    metadata:
+      labels:
+        app: flask-node
+        node: node1
+    spec:
+      containers:
+        - name: flask-node
+          image: stu240498/oldflask-node  # Dein Docker-Image hier einfügen
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "node1"  # Name des Nodes
+            - name: FLASK_PORT
+              value: "5000"  # Port für Flask

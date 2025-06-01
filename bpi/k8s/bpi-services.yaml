@@ -1,0 +1,322 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: a-submitted-service
+spec:
+  type: NodePort
+  selector:
+    app: a-submitted
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30030
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: a-partlysubmitted-service
+spec:
+  type: NodePort
+  selector:
+    app: a-partlysubmitted
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30031
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: a-preaccepted-service
+spec:
+  type: NodePort
+  selector:
+    app: a-preaccepted
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30032
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: w-completeren-aanvraag-service
+spec:
+  type: NodePort
+  selector:
+    app: w-completeren-aanvraag
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30033
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: a-accepted-service
+spec:
+  type: NodePort
+  selector:
+    app: a-accepted
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30034
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: o-selected-service
+spec:
+  type: NodePort
+  selector:
+    app: o-selected
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30035
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: a-finalized-service
+spec:
+  type: NodePort
+  selector:
+    app: a-finalized
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30036
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: o-created-service
+spec:
+  type: NodePort
+  selector:
+    app: o-created
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30037
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: o-sent-service
+spec:
+  type: NodePort
+  selector:
+    app: o-sent
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30038
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: w-nabellen-offertes-service
+spec:
+  type: NodePort
+  selector:
+    app: w-nabellen-offertes
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30039
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: o-sent-back-service
+spec:
+  type: NodePort
+  selector:
+    app: o-sent-back
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30040
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: w-valideren-aanvraag-service
+spec:
+  type: NodePort
+  selector:
+    app: w-valideren-aanvraag
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30041
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: a-registered-service
+spec:
+  type: NodePort
+  selector:
+    app: a-registered
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30042
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: a-approved-service
+spec:
+  type: NodePort
+  selector:
+    app: a-approved
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30043
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: o-accepted-service
+spec:
+  type: NodePort
+  selector:
+    app: o-accepted
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30044
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: a-activated-service
+spec:
+  type: NodePort
+  selector:
+    app: a-activated
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30045
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: o-cancelled-service
+spec:
+  type: NodePort
+  selector:
+    app: o-cancelled
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30046
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: a-declined-service
+spec:
+  type: NodePort
+  selector:
+    app: a-declined
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30047
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: a-cancelled-service
+spec:
+  type: NodePort
+  selector:
+    app: a-cancelled
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30048
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: w-afhandelen-leads-service
+spec:
+  type: NodePort
+  selector:
+    app: w-afhandelen-leads
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30049
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: o-declined-service
+spec:
+  type: NodePort
+  selector:
+    app: o-declined
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30050
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: w-nabellen-incomplete-dossiers-service
+spec:
+  type: NodePort
+  selector:
+    app: w-nabellen-incomplete-dossiers
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30051
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: w-beoordelen-fraude-service
+spec:
+  type: NodePort
+  selector:
+    app: w-beoordelen-fraude
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30052
+---

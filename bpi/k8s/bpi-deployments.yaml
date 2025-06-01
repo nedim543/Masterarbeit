@@ -1,0 +1,620 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: a-submitted
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: a-submitted
+  template:
+    metadata:
+      labels:
+        app: a-submitted
+    spec:
+      containers:
+        - name: a-submitted
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "A_SUBMITTED"
+            - name: OWN_PORT
+              value: "30030"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: a-partlysubmitted
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: a-partlysubmitted
+  template:
+    metadata:
+      labels:
+        app: a-partlysubmitted
+    spec:
+      containers:
+        - name: a-partlysubmitted
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "A_PARTLYSUBMITTED"
+            - name: OWN_PORT
+              value: "30031"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: a-preaccepted
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: a-preaccepted
+  template:
+    metadata:
+      labels:
+        app: a-preaccepted
+    spec:
+      containers:
+        - name: a-preaccepted
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "A_PREACCEPTED"
+            - name: OWN_PORT
+              value: "30032"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: w-completeren-aanvraag
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: w-completeren-aanvraag
+  template:
+    metadata:
+      labels:
+        app: w-completeren-aanvraag
+    spec:
+      containers:
+        - name: w-completeren-aanvraag
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "W_COMPLETEREN_AANVRAAG"
+            - name: OWN_PORT
+              value: "30033"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: a-accepted
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: a-accepted
+  template:
+    metadata:
+      labels:
+        app: a-accepted
+    spec:
+      containers:
+        - name: a-accepted
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "A_ACCEPTED"
+            - name: OWN_PORT
+              value: "30034"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: o-selected
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: o-selected
+  template:
+    metadata:
+      labels:
+        app: o-selected
+    spec:
+      containers:
+        - name: o-selected
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "O_SELECTED"
+            - name: OWN_PORT
+              value: "30035"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: a-finalized
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: a-finalized
+  template:
+    metadata:
+      labels:
+        app: a-finalized
+    spec:
+      containers:
+        - name: a-finalized
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "A_FINALIZED"
+            - name: OWN_PORT
+              value: "30036"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: o-created
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: o-created
+  template:
+    metadata:
+      labels:
+        app: o-created
+    spec:
+      containers:
+        - name: o-created
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "O_CREATED"
+            - name: OWN_PORT
+              value: "30037"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: o-sent
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: o-sent
+  template:
+    metadata:
+      labels:
+        app: o-sent
+    spec:
+      containers:
+        - name: o-sent
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "O_SENT"
+            - name: OWN_PORT
+              value: "30038"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: w-nabellen-offertes
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: w-nabellen-offertes
+  template:
+    metadata:
+      labels:
+        app: w-nabellen-offertes
+    spec:
+      containers:
+        - name: w-nabellen-offertes
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "W_NABELLEN_OFFERTES"
+            - name: OWN_PORT
+              value: "30039"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: o-sent-back
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: o-sent-back
+  template:
+    metadata:
+      labels:
+        app: o-sent-back
+    spec:
+      containers:
+        - name: o-sent-back
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "O_SENT_BACK"
+            - name: OWN_PORT
+              value: "30040"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: w-valideren-aanvraag
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: w-valideren-aanvraag
+  template:
+    metadata:
+      labels:
+        app: w-valideren-aanvraag
+    spec:
+      containers:
+        - name: w-valideren-aanvraag
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "W_VALIDEREN_AANVRAAG"
+            - name: OWN_PORT
+              value: "30041"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: a-registered
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: a-registered
+  template:
+    metadata:
+      labels:
+        app: a-registered
+    spec:
+      containers:
+        - name: a-registered
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "A_REGISTERED"
+            - name: OWN_PORT
+              value: "30042"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: a-approved
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: a-approved
+  template:
+    metadata:
+      labels:
+        app: a-approved
+    spec:
+      containers:
+        - name: a-approved
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "A_APPROVED"
+            - name: OWN_PORT
+              value: "30043"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: o-accepted
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: o-accepted
+  template:
+    metadata:
+      labels:
+        app: o-accepted
+    spec:
+      containers:
+        - name: o-accepted
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "O_ACCEPTED"
+            - name: OWN_PORT
+              value: "30044"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: a-activated
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: a-activated
+  template:
+    metadata:
+      labels:
+        app: a-activated
+    spec:
+      containers:
+        - name: a-activated
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "A_ACTIVATED"
+            - name: OWN_PORT
+              value: "30045"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: o-cancelled
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: o-cancelled
+  template:
+    metadata:
+      labels:
+        app: o-cancelled
+    spec:
+      containers:
+        - name: o-cancelled
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "O_CANCELLED"
+            - name: OWN_PORT
+              value: "30046"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: a-declined
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: a-declined
+  template:
+    metadata:
+      labels:
+        app: a-declined
+    spec:
+      containers:
+        - name: a-declined
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "A_DECLINED"
+            - name: OWN_PORT
+              value: "30047"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: a-cancelled
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: a-cancelled
+  template:
+    metadata:
+      labels:
+        app: a-cancelled
+    spec:
+      containers:
+        - name: a-cancelled
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "A_CANCELLED"
+            - name: OWN_PORT
+              value: "30048"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: w-afhandelen-leads
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: w-afhandelen-leads
+  template:
+    metadata:
+      labels:
+        app: w-afhandelen-leads
+    spec:
+      containers:
+        - name: w-afhandelen-leads
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "W_AFHANDELEN_LEADS"
+            - name: OWN_PORT
+              value: "30049"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: o-declined
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: o-declined
+  template:
+    metadata:
+      labels:
+        app: o-declined
+    spec:
+      containers:
+        - name: o-declined
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "O_DECLINED"
+            - name: OWN_PORT
+              value: "30050"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: w-nabellen-incomplete-dossiers
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: w-nabellen-incomplete-dossiers
+  template:
+    metadata:
+      labels:
+        app: w-nabellen-incomplete-dossiers
+    spec:
+      containers:
+        - name: w-nabellen-incomplete-dossiers
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "W_NABELLEN_INCOMPLETE_DOSSIERS"
+            - name: OWN_PORT
+              value: "30051"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: w-beoordelen-fraude
+  namespace: bpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: w-beoordelen-fraude
+  template:
+    metadata:
+      labels:
+        app: w-beoordelen-fraude
+    spec:
+      containers:
+        - name: w-beoordelen-fraude
+          image: stu240498/bpi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NAME
+              value: "W_BEOORDELEN_FRAUDE"
+            - name: OWN_PORT
+              value: "30052"
+---

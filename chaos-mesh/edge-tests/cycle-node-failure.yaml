@@ -1,0 +1,17 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: Schedule
+metadata:
+  name: pod-failure-node-b-schedule
+  namespace: edge-network
+spec:
+  schedule: "@every 20s" 
+  type: PodChaos
+  podChaos:
+    action: pod-failure
+    mode: one
+    duration: "5s" 
+    selector:
+      namespaces:
+        - edge-network
+      labelSelectors:
+        app: flask-node-b
