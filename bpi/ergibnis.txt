@@ -1,0 +1,96 @@
+Log-Fitness (gesamt): 0.5586  # Gesamtübereinstimmung Modell ↔ Log
+Average Trace Fitness: 0.6547  # Ø-Fitness über alle Traces
+Fitting Traces (%): 0.00%  # Anteil perfekt passender Traces
+Precision: 0.1050 
+
+Log-Fitness (gesamt): 0.5561  # Gesamtübereinstimmung Modell ↔ Log
+Average Trace Fitness: 0.6672  # Ø-Fitness über alle Traces
+Fitting Traces (%): 0.00%  # Anteil perfekt passender Traces
+Precision: 0.0995  # Modell-Spezifität (wenig unnötiges Verhalten)
+
+Log-Fitness (gesamt): 0.5669  # Gesamtübereinstimmung Modell ↔ Log
+Average Trace Fitness: 0.6579  # Ø-Fitness über alle Traces
+Fitting Traces (%): 0.00%  # Anteil perfekt passender Traces
+Precision: 0.1065  # Modell-Spezifität (wenig unnötiges Verhalten)
+
+
+    schwellwert 0.99
+--- Heuristics Miner ---
+Log-Fitness (gesamt): 0.9493  # Gesamtübereinstimmung Modell ↔ Log
+Average Trace Fitness: 0.9717  # Ø-Fitness über alle Traces
+Fitting Traces (%): 6207.69%  # Anteil perfekt passender Traces
+Precision: 0.4598  # Modell-Spezifität (wenig unnötiges Verhalten)
+
+
+
+=== Training mit: Modell ohne A_finalized ===
+Log-Fitness (gesamt): 0.9327  # Gesamtübereinstimmung Modell ↔ Log
+Average Trace Fitness: 0.9613  # Ø-Fitness über alle Traces
+Fitting Traces (%): 6042.64%  # Anteil perfekt passender Traces
+Precision: 0.5399  # Modell-Spezifität (wenig unnötiges Verhalten)
+
+
+
+=== Training mit: Modell ohne W_Valideren ===
+Log-Fitness (gesamt): 0.8762  # Gesamtübereinstimmung Modell ↔ Log
+Average Trace Fitness: 0.9365  # Ø-Fitness über alle Traces
+Fitting Traces (%): 6164.13%  # Anteil perfekt passender Traces
+Precision: 0.4735  # Modell-Spezifität (wenig unnötiges Verhalten)
+
+
+=== Training mit: Modell ohne W_Completer ===
+Log-Fitness (gesamt): 0.6227  # Gesamtübereinstimmung Modell ↔ Log
+Average Trace Fitness: 0.6985  # Ø-Fitness über alle Traces
+Fitting Traces (%): 1703.98%  # Anteil perfekt passender Traces
+Precision: 0.7518  # Modell-Spezifität (wenig unnötiges Verhalten)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+parsing log, completed traces :: 100%|██████████████████████████████████| 13087/13087 [00:05<00:00, 2326.84it/s]
+
+
+=== Training mit: Modell aus Normalzustand ===
+parsing log, completed traces :: 100%|██████████████████████████████████| 13087/13087 [00:05<00:00, 2304.77it/s]
+
+--- Heuristics Miner ---
+aligning log, completed variants :: 100%|███████████████████████████████████| 4366/4366 [07:09<00:00, 10.17it/s]
+computing precision with alignments, completed variants :: 100%|█████████| 56841/56841 [07:28<00:00, 126.82it/s]
+Log-Fitness (gesamt): 0.9493  # Gesamtübereinstimmung Modell ↔ Log
+Average Trace Fitness: 0.9717  # Ø-Fitness über alle Traces
+Fitting Traces (%): 6207.69%  # Anteil perfekt passender Traces
+Precision: 0.4598  # Modell-Spezifität (wenig unnötiges Verhalten)
+
+
+=== Training mit: Modell ohne A_finalized ===
+parsing log, completed traces :: 100%|██████████████████████████████████| 13087/13087 [00:05<00:00, 2315.71it/s]
+
+--- Heuristics Miner ---
+aligning log, completed variants :: 100%|███████████████████████████████████| 4366/4366 [10:00<00:00,  7.27it/s]
+computing precision with alignments, completed variants :: 100%|█████████| 56841/56841 [04:28<00:00, 211.34it/s]
+Log-Fitness (gesamt): 0.9327  # Gesamtübereinstimmung Modell ↔ Log
+Average Trace Fitness: 0.9613  # Ø-Fitness über alle Traces
+Fitting Traces (%): 6042.64%  # Anteil perfekt passender Traces
+Precision: 0.5399  # Modell-Spezifität (wenig unnötiges Verhalten)
+
+
+=== Training mit: Modell ohne W_Valideren ===
+parsing log, completed traces :: 100%|██████████████████████████████████| 13087/13087 [00:06<00:00, 2167.16it/s]
+
+--- Heuristics Miner ---
+aligning log, completed variants :: 100%|███████████████████████████████████| 4366/4366 [10:32<00:00,  6.90it/s]
+computing precision with alignments, completed variants :: 100%|█████████| 56841/56841 [05:50<00:00, 162.11it/s]
+Log-Fitness (gesamt): 0.8762  # Gesamtübereinstimmung Modell ↔ Log
+Average Trace Fitness: 0.9365  # Ø-Fitness über alle Traces
+Fitting Traces (%): 6164.13%  # Anteil perfekt passender Traces
+Precision: 0.4735  # Modell-Spezifität (wenig unnötiges Verhalten)

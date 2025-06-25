@@ -2,6 +2,8 @@
 import pandas as pd
 
 
+#Dise File sucht bstimmte bezihungen um überpüfungen auszuführen
+
 # Pfad zur CSV-Datei
 CSV_PATH = "bpi.csv"
 

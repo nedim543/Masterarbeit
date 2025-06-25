@@ -1,0 +1,12 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: pod-failure-w-valideren
+  namespace: bpi
+spec:
+  action: pod-failure
+  mode: one
+  duration: '86400'
+  selector:
+    labelSelectors:
+      app: w-valideren-aanvraag

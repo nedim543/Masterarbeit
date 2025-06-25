@@ -3,13 +3,13 @@ from pm4py.algo.discovery.dfg import algorithm as dfg_discovery
 from pm4py.visualization.dfg.variants import frequency as dfg_vis_frequency
 from pm4py.visualization.dfg import visualizer as dfg_visualization
 
-XES_PATH = "BPI_Challenge_2012.xes"  
+XES_PATH = "bpi_all.xes"  
 
 def main():
     log = xes_importer.apply(XES_PATH)
     dfg = dfg_discovery.apply(log)
 
-    THRESHOLD = 500
+    THRESHOLD = 1000
     # Filter Kanten nach Schwellenwert
     dfg_filtered = {k: v for k, v in dfg.items() if v >= THRESHOLD}
 

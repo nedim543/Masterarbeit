@@ -10,7 +10,7 @@ def send_event(ip, timestamp, caseid, node):
         "caseid": f"case_{caseid}",
         "node": node
     }
-
+    
     try:
         start_time = time.time()
         response = requests.post(url, json=data)

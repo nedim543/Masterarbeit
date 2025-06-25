@@ -23,7 +23,6 @@ pod_ips = []
 namespace = "edge-network"
 
 # Lade die Kubernetes-Konfiguration
-#TODO: service ip
 try:
     config.load_incluster_config()  # Für den Einsatz in einem Kubernetes-Cluster
 except:
@@ -204,7 +203,6 @@ def set_successor():
         return jsonify({'status': 'CaseID not found'}), 404
 
     # Suche nach dem Event, das dem Timestamp entspricht
-    print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa")
     event_found = False
     for event in local_events[caseid]:
         if event['timestamp'] == timestamp:

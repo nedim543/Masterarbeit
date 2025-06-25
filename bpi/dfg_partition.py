@@ -5,12 +5,24 @@ from pm4py.visualization.dfg import visualizer as dfg_visualization
 
 
 # Pfad zur XES-Datei
-XES_PATH = "BPI_Challenge_2012.xes"  
+XES_PATH = "bpi_ohne_W_Completer.xes"  
 
 def filter_dfg_by_activities_and_no_reflexive(dfg, allowed_activities):
     filtered_dfg = {}
     for (act1, act2), count in dfg.items():
         if act1 in allowed_activities and act2 in allowed_activities and act1 != act2:
+            filtered_dfg[(act1, act2)] = count
+    return filtered_dfg
+
+def filter_dfg_by_activities_and_threshold(dfg, allowed_activities, threshold=100):
+    filtered_dfg = {}
+    for (act1, act2), count in dfg.items():
+        if (
+            act1 in allowed_activities 
+            and act2 in allowed_activities 
+            and act1 != act2 
+            and count > threshold
+        ):
             filtered_dfg[(act1, act2)] = count
     return filtered_dfg
 
@@ -29,18 +41,32 @@ def main():
     dfg = dfg_discovery.apply(log)
 
     allowed_activities = [
-        "A_SUBMITTED", "A_PARTLYSUBMITTED", "A_PREACCEPTED", "W_Completeren aanvraag", "A_ACCEPTED"
+        "A_PREACCEPTED",
+        "W_Completeren aanvraag",
+        "A_ACCEPTED",
+        "O_SELECTED",
+        "A_FINALIZED",
+        "W_Nabellen offertes",
+        "A_DECLINED",
+        "A_CANCELLED",
+        "W_Afhandelen leads",
+        "W_Beoordelen fraude"
     ]
 
     # Log filtern
     filtered_log = filter_log_by_activities(log, allowed_activities)
 
     # DFG filtern
-    dfg_filtered = filter_dfg_by_activities_and_no_reflexive(dfg, allowed_activities)
+    #dfg_filtered = filter_dfg_by_activities_and_no_reflexive(dfg, allowed_activities)
+    dfg_filtered = filter_dfg_by_activities_and_threshold(dfg, allowed_activities, threshold=100)
+
 
     # Visualisieren, aber nur mit dem gefilterten Log
     gviz = dfg_visualization.apply(dfg_filtered, log=filtered_log, variant=dfg_vis_frequency)
     dfg_visualization.view(gviz)
+
+    dfg_visualization.save(gviz, "dfg_partion.png")
+    print("Graph gespeichert unter: dfg_partion.png")
 
 
 if __name__ == "__main__":
