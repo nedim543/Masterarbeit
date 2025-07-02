@@ -1,3 +1,8 @@
+
+# Im Unterschied zur vorherigen Version wird der Vorgänger eines Events
+# nicht mehr direkt beim Eintreffen in /event gesucht. Stattdessen erfolgt
+# die Analyse und Befüllung der Footprint-Matrix erst bei einer Abfrage
+# über /footprint_matrix.
 from flask import Flask, request, jsonify
 from kubernetes import client, config
 import datetime
@@ -105,7 +110,6 @@ def process_event():
     caseid = event['caseid']
     node = event['node']
 
-    #TODO: caseid: [list]
     # Schritt 1: Speichere das Event lokal
     # Überprüfen, ob die CaseID bereits existiert, wenn nicht, initialisieren
     if caseid not in local_events:
@@ -119,27 +123,9 @@ def process_event():
         'predecessor': "",  # Vorgänger wird später gesucht
         'successor': ""
     })
-    """
-    print("localEvent Liste::::::::::::")
-    print(local_events)
-    print("timestemp:::::::::::::::::")
-    print(timestamp)
-    """
-
-    update_podlist()
-    
-    # Schritt 2: Suche den besten Vorgänger (Predecessor)
-    predecessor = find_predecessor(caseid, timestamp, node)
-    print(predecessor)
     
 
-    # Schritt 3: Aktualisiere die Footprint-Matrix basierend auf Vorgänger und aktuellem Event
-    if predecessor:
-        print("TEST TEST TEST")
-        print(predecessor['node'])
-        update_footprint_matrix(timestamp, caseid, predecessor)
-
-    return jsonify({'status': 'Event processed', 'predecessor': predecessor}), 200
+    return jsonify({'status': 'Event stored'}), 200
 
 
 
@@ -295,10 +281,27 @@ def get_footprint_matrix():
     """
     Phase 2: Sende die lokale Footprint-Matrix als Antwort auf eine Anfrage.
     """
-    print(footprint_matrix)
-    print(local_events)
-    print(pod_ips)
+    global footprint_matrix
+    footprint_matrix = {}
+
+    update_podlist()  # Hole die aktuelle Podliste
+
+    # Schleife über alle lokalen Events
+    for caseid, events in local_events.items():
+        for event in events:
+            if event['predecessor'] == "":
+                timestamp = event['timestamp']
+                node = event['node']
+
+                # Vorgänger suchen
+                predecessor = find_predecessor(caseid, timestamp, node)
+
+                # Footprint-Matrix aktualisieren
+                if predecessor:
+                    update_footprint_matrix(timestamp, caseid, predecessor)
+
     return jsonify(footprint_matrix), 200
+    
 
 
 if __name__ == '__main__':
