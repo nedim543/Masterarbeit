@@ -1,5 +1,9 @@
-# Masterarbeit – Dezentrales Event-Tracking-System
+# Chaos Testing für verteilte Systeme in Kubernetes
 
-Dieses Projekt implementiert ein verteiltes Event-Tracking-System auf Basis von Flask und Kubernetes. Es dient zur Analyse von Prozessdaten und berechnet sogenannte **Footprint-Matrizen**, die Übergänge zwischen Knoten/Aktivitäten sichtbar machen.
+Dieses Repository gehört zur Masterarbeit mit dem Titel:
 
-## 🔧 Projektstruktur
+**Chaos Testing für verteilte Systeme in Kubernetes: Zuverlässigkeit von Distributed-Process-Mining Algorithmen**
+
+Diese Arbeit untersucht die Zuverlässigkeit und Robustheit verteilter Process-Mining-Algorithmen – insbesondere des *Edge Miner Algorithmus* – mithilfe von Chaos Testing in einer Kubernetes-basierten Umgebung.
+
+Ziel war es, die Auswirkungen gezielter Störungen wie Knotenausfällen, Netzwerkverzögerungen und Zeitinkonsistenzen systematisch zu analysieren. Die Ergebnisse zeigen, dass Chaos Testing kritische Schwachstellen offenlegen kann, die im regulären Betrieb oft unentdeckt bleiben.
