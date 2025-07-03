@@ -14,7 +14,7 @@ Das Repository enthält mehrere Implementierungen und Konfigurationen zur Unters
 
 ### 1. 🛰 Dezentrale Variante (Edge Miner)
 
-Im Hauptverzeichnis (`edgeNode.py`) befindet sich die erste dezentrale Variante, die sich an den Prinzipien des **Edge Miner Algorithmus** orientiert. Jeder Knoten speichert lokale Events und tauscht sich mit Peers über HTTP aus. Die Footprint-Matrix wird on-demand generiert.
+Im Hauptverzeichnis (`edgeNode.py`) befindet sich die erste dezentrale Variante, die sich an den Prinzipien des **Edge Miner Algorithmus** orientiert. Jeder Knoten speichert lokale Events und tauscht sich mit Peers über HTTP aus.
 
 ### 2. 🧠 Zentrale Variante
 
