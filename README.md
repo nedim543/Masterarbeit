@@ -47,8 +47,8 @@ Um dieses Repository bzw. die enthaltenen Testumgebungen nutzen zu können, müs
 
 ### ✅ Voraussetzungen
 
-- [Kubernetes](https://kubernetes.io/)
-- [Minikube](https://minikube.sigs.k8s.io/)
+- [Kubernetes](https://kubernetes.io/docs/setup/)
+- [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 - [Chaos Mesh](https://chaos-mesh.org/) (für das Chaos Testing)
 
 Ein Installationsleitfaden für Chaos Mesh befindet sich unter:  
