@@ -90,11 +90,11 @@ Die Ports müssen in der Regel **nicht angepasst** werden.
 
 #### Standard-Testskripte:
 
-| Variante        | Pfad zum Testskript         |
-|----------------|------------------------------|
-| Zentral         | `testing/central-test.py`   |
-| Dezentral       | `testing/test.py`           |
-| BPI-Umgebung    | `bpi/k8s/bpi-test.py`        |
+| Variante        | Pfad zum Testskript                                |
+|----------------|-----------------------------------------------------|
+| Zentral         | [`testing/central-test.py`](testing/central-test.py) |
+| Dezentral       | [`testing/test.py`](testing/test.py)                 |
+| BPI-Umgebung    | [`bpi/k8s/bpi-test.py`](bpi/k8s/bpi-test.py)         |
 
 ---
 
@@ -103,11 +103,10 @@ Die Ports müssen in der Regel **nicht angepasst** werden.
 Um die Robustheit unter realistischen Fehlerbedingungen zu prüfen, können gezielt Störungen mittels Chaos Mesh injiziert werden.  
 Diese sollten **vor dem Ausführen der Python-Tests** aktiviert werden.
 
-| Umgebung        | Chaos-Szenarien Pfad           |
-|----------------|---------------------------------|
-| Zentral         | `chaos-mesh/central-tests/`    |
-| Dezentral       | `chaos-mesh/edge-tests/`       |
-| BPI             | `bpi/chaos/`                   |
+| Umgebung        | Chaos-Szenarien Pfad                                  |
+|----------------|--------------------------------------------------------|
+| Zentral         | [`chaos-mesh/central-tests/`](chaos-mesh/central-tests/) |
+| Dezentral       | [`chaos-mesh/edge-tests/`](chaos-mesh/edge-tests/)       |
+| BPI             | [`bpi/chaos/`](bpi/chaos/)                               |
 
 >  **Hinweis:** Zwischen dem Start der Chaos-Injektion und dem Python-Testskript sollte eine kurze Wartezeit eingeplant werden, damit der Chaos Daemon zuverlässig auf die betroffenen Pods wirkt.
-
