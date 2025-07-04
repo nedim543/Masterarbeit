@@ -61,11 +61,11 @@ https://chaos-mesh.org/docs/quick-start/
 Nach erfolgreicher Einrichtung von Minikube und Chaos Mesh können die gewünschten Testumgebungen erstellt werden – entweder durch:
 
 - direkte Ausführung der zugehörigen `.yaml`-Dateien in Minikube, oder
-- (zukünftig) durch bereitgestellte Python-Startskripte.
+- durch bereitgestellte Startskripte.
 
 #### Testumgebungen:
 
-- **Dezentrale Variante (Edge Miner):** Startskript in Vorbereitung
+- **Dezentrale Variante (Edge Miner):** [start_dezentral.sh](start_dezentral.sh)
 - **Zentrale Variante:** Startskript in Vorbereitung
 - **BPI-Challenge Umgebung:** Startskript in Vorbereitung
 
