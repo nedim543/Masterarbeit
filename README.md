@@ -52,7 +52,7 @@ Um dieses Repository bzw. die enthaltenen Testumgebungen nutzen zu können, müs
 - [Chaos Mesh](https://chaos-mesh.org/) (für das Chaos Testing)
 
 Ein Installationsleitfaden für Chaos Mesh befindet sich unter:  
-👉 https://chaos-mesh.org/docs/quick-start/
+https://chaos-mesh.org/docs/quick-start/
 
 ---
 
@@ -109,5 +109,5 @@ Diese sollten **vor dem Ausführen der Python-Tests** aktiviert werden.
 | Dezentral       | `chaos-mesh/edge-tests/`       |
 | BPI             | `bpi/chaos/`                   |
 
-> 🔄 **Hinweis:** Zwischen dem Start der Chaos-Injektion und dem Python-Testskript sollte eine kurze Wartezeit eingeplant werden, damit der Chaos Daemon zuverlässig auf die betroffenen Pods wirkt.
+>  **Hinweis:** Zwischen dem Start der Chaos-Injektion und dem Python-Testskript sollte eine kurze Wartezeit eingeplant werden, damit der Chaos Daemon zuverlässig auf die betroffenen Pods wirkt.
 
