@@ -29,7 +29,7 @@ Die dritte, komplexere Variante basiert auf dem **BPI-Challenge-Datensatz** und 
 
 ### 🔧 Verbesserungen
 
-Der Ordner [`improvement-deployments/`](improvement-deployments/) enthält alternative Deployments und Verbesserungen, die im Rahmen der Arbeit entwickelt und evaluiert wurden.
+Der Ordner [`improvement-deployments/`](improvement-deplyments/) enthält alternative Deployments und Verbesserungen, die im Rahmen der Arbeit entwickelt und evaluiert wurden.
 
 ### 🧪 Testskripte
 
