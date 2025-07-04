@@ -38,3 +38,76 @@ Im Ordner [`testing/`](testing/) liegen verschiedene Python-Tests zur automatisi
 ### ⚡ Chaos Mesh Szenarien
 
 Im Ordner [`chaos-mesh/`](chaos-mesh/) befinden sich definierte Störungsszenarien (z. B. Node-Ausfälle, Latenz), welche mithilfe von **Chaos Mesh** im Kubernetes-Cluster ausgeführt wurden.
+
+
+
+## 🔧 Nutzung & Ausführung
+
+Um dieses Repository bzw. die enthaltenen Testumgebungen nutzen zu können, müssen zunächst folgende Voraussetzungen erfüllt sein:
+
+### ✅ Voraussetzungen
+
+- [Kubernetes](https://kubernetes.io/)
+- [Minikube](https://minikube.sigs.k8s.io/)
+- [Chaos Mesh](https://chaos-mesh.org/) (für das Chaos Testing)
+
+Ein Installationsleitfaden für Chaos Mesh befindet sich unter:  
+👉 https://chaos-mesh.org/docs/quick-start/
+
+---
+
+### 📦 Testumgebungen starten
+
+Nach erfolgreicher Einrichtung von Minikube und Chaos Mesh können die gewünschten Testumgebungen erstellt werden – entweder durch:
+
+- direkte Ausführung der zugehörigen `.yaml`-Dateien in Minikube, oder
+- (zukünftig) durch bereitgestellte Python-Startskripte.
+
+#### Testumgebungen:
+
+- **Dezentrale Variante (Edge Miner):** Startskript in Vorbereitung
+- **Zentrale Variante:** Startskript in Vorbereitung
+- **BPI-Challenge Umgebung:** Startskript in Vorbereitung
+
+Nach dem Start der Pods kannst du den Status über das folgende Kommando prüfen:
+
+```bash
+kubectl get pods --namespace=<dein-namespace>
+```
+
+---
+
+### 🧪 Testausführung
+
+Wenn die Umgebung aktiv ist, können die zugehörigen Tests ausgeführt werden.  
+**Achte dabei darauf, die IP-Adresse der Minikube-Instanz anzupassen**, da diese variieren kann:
+
+```bash
+minikube ip
+```
+
+Die Ports müssen in der Regel **nicht angepasst** werden.
+
+#### Standard-Testskripte:
+
+| Variante        | Pfad zum Testskript         |
+|----------------|------------------------------|
+| Zentral         | `testing/central-test.py`   |
+| Dezentral       | `testing/test.py`           |
+| BPI-Umgebung    | `bpi/k8s/bpi-test.py`        |
+
+---
+
+### ⚠️ Tests unter Chaos-Bedingungen
+
+Um die Robustheit unter realistischen Fehlerbedingungen zu prüfen, können gezielt Störungen mittels Chaos Mesh injiziert werden.  
+Diese sollten **vor dem Ausführen der Python-Tests** aktiviert werden.
+
+| Umgebung        | Chaos-Szenarien Pfad           |
+|----------------|---------------------------------|
+| Zentral         | `chaos-mesh/central-tests/`    |
+| Dezentral       | `chaos-mesh/edge-tests/`       |
+| BPI             | `bpi/chaos/`                   |
+
+> 🔄 **Hinweis:** Zwischen dem Start der Chaos-Injektion und dem Python-Testskript sollte eine kurze Wartezeit eingeplant werden, damit der Chaos Daemon zuverlässig auf die betroffenen Pods wirkt.
+
