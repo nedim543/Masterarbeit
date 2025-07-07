@@ -66,8 +66,8 @@ Nach erfolgreicher Einrichtung von Minikube und Chaos Mesh können die gewünsch
 #### Testumgebungen:
 
 - **Dezentrale Variante (Edge Miner):** [start_dezentral.sh](start_dezentral.sh)
-- **Zentrale Variante:** Startskript in Vorbereitung
-- **BPI-Challenge Umgebung:** Startskript in Vorbereitung
+- **Zentrale Variante:** [start_zentral.sh](start_zentral.sh)
+- **BPI-Challenge Umgebung:** [start_bpi.sh](start_bpi.sh)
 
 Nach dem Start der Pods kannst du den Status über das folgende Kommando prüfen:
 
