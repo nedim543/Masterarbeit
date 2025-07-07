@@ -44,10 +44,13 @@ def main():
     import time
     import requests
 
-    ip1 = "192.168.49.2:30010"
-    ip2 = "192.168.49.2:30011"
-    ip3 = "192.168.49.2:30012"
-    ip4 = "192.168.49.2:30013"
+    base_ip = "192.168.49.2"
+   
+    ip1 = f"{base_ip}:30010"
+    ip2 = f"{base_ip}:30011"
+    ip3 = f"{base_ip}:30012"
+    ip4 = f"{base_ip}:30013"
+
 
     num_messages = int(input("Wie viele Nachrichten sollen gesendet werden? "))
 
