@@ -41,11 +41,14 @@ def get_footprint_matrix(ip, node):
         print(f"⚠ Fehler beim Abrufen der Footprint-Matrix von {node}: {e}")
 
 def main():
-    central = "192.168.49.2:30020" #input("Gib die erste IP ein (z. B. 10.244.3.222:5000): ").strip()
-    ip1 = "192.168.49.2:30021" #input("Gib die erste IP ein (z. B. 10.244.3.222:5000): ").strip()
-    ip2 = "192.168.49.2:30022" #input("Gib die zweite IP ein (z. B. 10.244.3.213:5000): ").strip()
-    ip3 = "192.168.49.2:30023" #input("Gib die dritte IP ein (z. B. 10.244.3.250:5000): ").strip()
-    ip4 = "192.168.49.2:30024" #input("Gib die dritte IP ein (z. B. 10.244.3.250:5000): ").strip()
+    base_ip = "192.168.49.2"
+
+    central = f"{base_ip}:30020"
+    ip1 = f"{base_ip}:30021"
+    ip2 = f"{base_ip}:30022"
+    ip3 = f"{base_ip}:30023"
+    ip4 = f"{base_ip}:30024"
+
 
     num_messages = int(input("Wie viele Nachrichten sollen gesendet werden? "))
 
